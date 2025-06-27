@@ -1,0 +1,585 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fefefe;
+    color: #333;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff4d4d;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+nav a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: #ffd6d6;
+}
+
+.home {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url('biriyani.png') center center / cover no-repeat;
+}
+
+.home::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.overlay-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 1rem;
+}
+
+.overlay-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.overlay-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.order-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #ff4d4d;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.order-btn:hover {
+    background-color: #e03e3e;
+    transform: scale(1.05);
+}
+
+.menu {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url('FoodBack.png') center center / cover no-repeat;
+}
+
+.menu::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.overlay-menu {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 4rem 1rem;
+}
+
+.overlay-menu h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.overlay-menu p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: #f5f5f5;
+    max-width: 700px;
+}
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 1rem;
+    padding: 0 1rem;
+}
+
+.food-item {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.food-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+.food-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.food-item h3 {
+    margin: 0.8rem 0 0.4rem;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.food-item .price {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 0.5rem;
+}
+
+.food-item button {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.food-item button:hover {
+    background-color: #e03e3e;
+    transform: scale(1.05);
+}
+.offer-marquee {
+    background-color: #ff4d4d;
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    padding: 0.5rem 0;
+    font-weight: 500;
+}
+
+.offer-marquee p {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+.offer-marquee p:hover {
+    animation-play-state: paused;
+}
+.offer-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url('FoodBack.png') center center / cover no-repeat;
+}
+
+.offer-section::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.offer-overlay {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 4rem 1rem;
+}
+
+.offer-heading {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.offer-subtext {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: #f5f5f5;
+    max-width: 700px;
+}
+
+.offer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 1rem;
+    padding: 0 1rem;
+}
+
+.offer-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.offer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+.offer-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.offer-card h3 {
+    margin: 0.8rem 0 0.4rem;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.offer-price {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 0.5rem;
+}
+
+.offer-button {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.offer-button:hover {
+    background-color: #e03e3e;
+    transform: scale(1.05);
+}
+.contact-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url('FoodBack.png') center center / cover no-repeat;
+}
+
+.contact-section::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.contact-overlay {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 1rem;
+}
+
+.contact-heading {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-subtext {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1000px;
+    width: 100%;
+    margin-top: 1rem;
+}
+.contact-info-card,
+.contact-map-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #333;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    flex: 1 1 300px;
+    max-width: 450px;
+    text-align: left;
+}
+
+.contact-info-card h2,
+.contact-map-card h2 {
+    color: #ff4d4d;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.contact-info-card p {
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.contact-map-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+}
+.cart-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url('FoodBack.png') center center / cover no-repeat;
+}
+
+.cart-section::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.cart-overlay {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1.5rem;
+    color: #fff;
+}
+
+.cart-heading {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.cart-subtext {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    color: #f5f5f5;
+}
+
+.cart-note-box {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #333;
+    max-width: 700px;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    text-align: left;
+    line-height: 1.6;
+}
+
+.cart-note-box p {
+    margin: 0.5rem 0;
+    font-size: 1.05rem;
+}
+
+.dev-highlight {
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+.cart-button {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cart-button:hover {
+    background-color: #e03e3e;
+    transform: scale(1.05);
+}
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.95rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content a {
+    color: #ff4d4d;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+.login-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url('FoodBack.png') center center / cover no-repeat;
+}
+
+.login-section::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.login-overlay {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.login-form {
+    background-color: rgba(255, 255, 255, 0.97);
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    text-align: left;
+}
+
+.login-form h1 {
+    margin-bottom: 1.2rem;
+    font-size: 1.8rem;
+    text-align: center;
+    color: #333;
+}
+
+.login-form label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.login-form input[type="text"],
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.login-form input[type="submit"] {
+    margin-top: 1.5rem;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: #e03e3e;
+    transform: scale(1.03);
+}
+
+.extra-links {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.extra-links a {
+    color: #ff4d4d;
+    text-decoration: none;
+}
+
+.extra-links a:hover {
+    text-decoration: underline;
+}

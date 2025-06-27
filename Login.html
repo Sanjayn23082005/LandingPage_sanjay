@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login - Belly Fillers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">🍽️ Belly Fillers</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="offer.html">Offers</a>
+            <a href="Contact.html">Contact Us</a>
+            <a href="Login.html">Login</a>
+        </nav>
+    </header>
+
+    <section class="login-section">
+        <div class="login-overlay">
+            <form class="login-form" onsubmit="return validate()">
+                <h1>🍽️ Belly Fillers Login</h1>
+                <label for="un">👤 Username:</label>
+                <input type="text" id="un" name="un" placeholder="Enter your username" required>
+                <label for="email">📧 Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <label for="pass">🔒 Password:</label>
+                <input type="password" id="pass" name="pass" placeholder="Enter your password" required>
+                <input type="submit" value="Login">
+                <div class="extra-links">
+                    <a href="----------">Forgot password?</a>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
